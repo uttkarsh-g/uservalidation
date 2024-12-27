@@ -1,14 +1,21 @@
 const yes = document.querySelector('#yes');
+
 const no = document.querySelector('#no');
+
 const verifyPage = document.querySelector('.ageVerify');
+
 let userInput = JSON.parse(localStorage.getItem('pass')) || false;
 
 const sixHour = 1 * 60 * 60 * 1000;
+
 const timeNew = localStorage.getItem('time');
+
 if (Date.now() - parseInt(timeNew) > sixHour) {
   localStorage.removeItem('time');
   localStorage.removeItem('pass');
 }
+
+
 if (!userInput) {
   window.history.pushState({}, '', '/Age Verification');
 } else {
@@ -24,7 +31,10 @@ yes.addEventListener('click', (e) => {
   window.history.pushState({}, '', '/');
   localStorage.setItem('time', Date.now().toString());
 });
+
+
 if (userInput) verifyPage.classList.add('invi');
+
 
 no.addEventListener('click', (e) => {
   e.preventDefault();
