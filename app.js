@@ -28,7 +28,7 @@ yes.addEventListener('click', (e) => {
   verifyPage.classList.add('top');
   userInput = true;
   localStorage.setItem('pass', JSON.stringify(userInput));
-  window.history.pushState({}, '', '/');
+  window.history.pushState({}, '', '/uservalidation/');
   localStorage.setItem('time', Date.now().toString());
 });
 
