@@ -9,6 +9,11 @@ if (Date.now() - parseInt(timeNew) > sixHour) {
   localStorage.removeItem('time');
   localStorage.removeItem('pass');
 }
+if (!userInput) {
+  window.history.pushState({}, '', '/Age Verification');
+} else {
+  window.history.pushState({}, '', '/');
+}
 
 yes.addEventListener('click', (e) => {
   e.preventDefault();
@@ -16,6 +21,7 @@ yes.addEventListener('click', (e) => {
   verifyPage.classList.add('top');
   userInput = true;
   localStorage.setItem('pass', JSON.stringify(userInput));
+  window.history.pushState({}, '', '/');
   localStorage.setItem('time', Date.now().toString());
 });
 if (userInput) verifyPage.classList.add('invi');
