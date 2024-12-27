@@ -19,7 +19,7 @@ if (Date.now() - parseInt(timeNew) > sixHour) {
 if (!userInput) {
   window.history.pushState({}, '', '/Age Verification');
 } else {
-  window.history.pushState({}, '', '/');
+  window.history.pushState({}, '', '/uservalidation/');
 }
 
 yes.addEventListener('click', (e) => {
